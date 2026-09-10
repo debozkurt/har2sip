@@ -1,0 +1,4 @@
+*.pcap
+*.sip.txt
+*.har
+__pycache__/
