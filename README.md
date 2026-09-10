@@ -6,6 +6,13 @@ Python 3, no dependencies.
 ## Install
 
 ```bash
+curl -o ~/.local/bin/har2sip https://raw.githubusercontent.com/debozkurt/har2sip/main/har2sip
+chmod +x ~/.local/bin/har2sip
+```
+
+Or from a local copy:
+
+```bash
 cp har2sip ~/.local/bin/
 chmod +x ~/.local/bin/har2sip
 ```
