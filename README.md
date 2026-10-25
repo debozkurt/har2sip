@@ -3,6 +3,17 @@
 Extract SIP-over-WebSocket frames from a browser HAR into a pcap.
 Python 3, no dependencies.
 
+Browser softphones send SIP over a secure WebSocket, so a normal packet capture never shows the SIP
+messages. Chrome DevTools records those WebSocket frames in a HAR file. har2sip re-wraps each SIP
+frame as IPv4/UDP on port 5060, so Wireshark and sngrep can dissect it.
+
+The SIP bytes, direction, and timestamps come from the HAR. The client address is synthetic, because
+a HAR never records the browser's own IP. The server address comes from the Via and Contact headers,
+or from `--peer-ip`.
+
+> **Before you share a HAR or a pcap:** HAR files can hold cookies and auth tokens, and SIP headers
+> can hold phone numbers and digest authentication data. Remove them first.
+
 ## Install
 
 ```bash
