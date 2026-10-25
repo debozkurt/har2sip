@@ -26,3 +26,7 @@ har2sip trace.har --open wireshark
 har2sip *.har                        # batch
 har2sip --help
 ```
+
+## License
+
+MIT. See [LICENSE](LICENSE).
